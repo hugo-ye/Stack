@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        homework2();
+        homework3();
     }
 
     public static void example1() {
@@ -58,7 +58,8 @@ public class Main {
         }
         System.out.println(sum);
     }
-    public static void homework2()  {
+
+    public static void homework2() {
         StaticStack words = new StaticStack(10);
         Scanner scanner = new Scanner(System.in);
         while (!words.isFull()) {
@@ -68,7 +69,41 @@ public class Main {
             System.out.println(words.pop());
         }
     }
+
     public static void homework3() {
-        //confused
+        boolean perfect = true;
+        int type1 = 0;
+        int type2 = 0;
+        int type3 = 0;
+
+        Scanner scanner = new Scanner(System.in);
+        boolean run = true;
+        while (run) {
+            String bracket = scanner.next();
+            if (bracket.equals("!")) {
+                run = false;
+            } else {
+                switch (bracket) {
+                    case "(" -> type1++;
+                    case ")" -> type1--;
+                    case "[" -> type2++;
+                    case "]" -> type2--;
+                    case "{" -> type3++;
+                    case "}" -> type3--;
+                }
+                if (type1 < 0 || type2 < 0 || type3 < 0) {
+                    perfect = false;
+                    run = false;
+
+
+                }
+            }
+
+
+        }
+
+
+        System.out.println(perfect);
+
     }
 }
