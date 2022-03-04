@@ -92,13 +92,14 @@ public class Main {
                     case "}" -> type3--;
                 }
                 if (type1 < 0 || type2 < 0 || type3 < 0) {
-                    perfect = false;
                     run = false;
 
 
                 }
             }
-
+            if (type1 != 0 || type2 != 0 || type3 != 0) {
+                perfect = false;
+            }
 
         }
 
